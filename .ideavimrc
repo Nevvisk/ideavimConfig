@@ -1,0 +1,111 @@
+
+" =========================
+" IdeaVim config (macOS)
+" Vim motions + IntelliJ power
+" =========================
+
+" --- Core feel ---
+set number
+set relativenumber
+set scrolloff=5
+set incsearch
+set nohlsearch
+set ignorecase
+set smartcase
+set clipboard+=unnamedplus
+
+" Leader key
+let mapleader=" "
+
+" --- IdeaVim extensions (built-in) ---
+set surround
+set commentary
+set easymotion
+set which-key
+
+" =========================
+" Keep yanks safe: delete/change does NOT yank
+" (send deletes/changes to the black hole register)
+" =========================
+nnoremap d "_d
+nnoremap D "_D
+nnoremap x "_x
+nnoremap X "_X
+nnoremap c "_c
+nnoremap C "_C
+nnoremap s "_s
+nnoremap S "_S
+
+vnoremap d "_d
+vnoremap D "_D
+vnoremap x "_x
+vnoremap X "_X
+vnoremap c "_c
+vnoremap C "_C
+vnoremap s "_s
+vnoremap S "_S
+
+" =========================
+" IntelliJ actions (Vim keys -> IDE power)
+" =========================
+
+" Project / tool windows (NERDTree-like workflow using Project pane)
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>q :action HideActiveWindow<CR>
+nnoremap <leader>E :action HideAllWindows<CR>
+
+" Search / open
+nnoremap <leader>s :action SearchEverywhere<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>F :action RecentFiles<CR>
+nnoremap <leader>/ :action FindInPath<CR>
+
+" Symbol / structure navigation
+nnoremap <leader>m :action FileStructurePopup<CR>
+nnoremap <leader>h :action TypeHierarchy<CR>
+
+" Code navigation
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>n :action Forward<CR>
+
+" Intentions / quick fixes
+nnoremap <leader>a :action ShowIntentionActions<CR>
+
+" Refactor
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>p :action Refactorings.QuickListPopupAction<CR>
+
+" Formatting / imports
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+" Run / Debug
+nnoremap <leader>t :action Run<CR>
+nnoremap <leader>T :action Debug<CR>
+nnoremap <leader>k :action Stop<CR>
+
+" Terminal (handy on macOS)
+nnoremap <leader>` :action ActivateTerminalToolWindow<CR>
+
+" =========================
+" Easymotion: fast in-file jumps
+" =========================
+" Jump to 2-char pattern (super fast)
+nmap s <Plug>(easymotion-s2)
+
+" Jump to a character on screen
+nmap <leader>j <Plug>(easymotion-bd-f)
+nmap <leader>J <Plug>(easymotion-bd-f2)
+
+" =========================
+" Quality-of-life
+" =========================
+
+" Clear search highlight
+nnoremap <leader>h :nohlsearch<CR>
+
+" Save from normal mode
+nnoremap <leader>w :w<CR>
