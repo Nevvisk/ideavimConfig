@@ -55,7 +55,7 @@ nnoremap <leader>q :action HideActiveWindow<CR>
 nnoremap <leader>E :action HideAllWindows<CR>
 
 " Search / open
-vnoremap <leader>s <Action>(FindInPath)
+vnoremap <leader>s :action FindInPath<CR>
 nnoremap <leader>s :action SearchEverywhere<CR>
 nnoremap <leader>f :action GotoFile<CR>
 nnoremap <leader>F :action RecentFiles<CR>
