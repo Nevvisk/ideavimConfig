@@ -44,6 +44,7 @@ vnoremap c "_c
 vnoremap C "_C
 vnoremap s "_s
 vnoremap S "_S
+vnoremap y ygv
 
 " =========================
 " IntelliJ actions (Vim keys -> IDE power)
@@ -104,9 +105,5 @@ nmap <leader>J <Plug>(easymotion-bd-f2)
 " =========================
 " Quality-of-life
 " =========================
-
-" Clear search highlight
-nnoremap <leader>h :nohlsearch<CR>
-
 " Save from normal mode
 nnoremap <leader>w :w<CR>
