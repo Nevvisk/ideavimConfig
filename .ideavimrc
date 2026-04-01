@@ -22,6 +22,7 @@ set surround
 set commentary
 set easymotion
 set which-key
+set NERDTree
 
 " =========================
 " Keep yanks safe: delete/change does NOT yank
@@ -51,14 +52,14 @@ vnoremap y ygv
 " =========================
 
 " Project / tool windows (NERDTree-like workflow using Project pane)
-nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>e :NERDTree<CR>
 nnoremap <leader>q :action HideActiveWindow<CR>
 nnoremap <leader>E :action HideAllWindows<CR>
 
 " Search / open
 vnoremap <leader>s :action FindInPath<CR>
 nnoremap <leader>s :action SearchEverywhere<CR>
-nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>F :action RecentFiles<CR>
 nnoremap <leader>/ :action FindInPath<CR>
 
@@ -70,6 +71,10 @@ nnoremap <leader>h :action TypeHierarchy<CR>
 nnoremap <leader>d :action GotoDeclaration<CR>
 nnoremap <leader>i :action GotoImplementation<CR>
 nnoremap <leader>u :action FindUsages<CR>
+nnoremap <C-S-j> :action EditorDownWithSelection<CR>
+nnoremap <C-S-k> :action EditorUpWithSelection<CR>
+vnoremap <C-S-j> :action EditorDownWithSelection<CR>
+vnoremap <C-S-k> :action EditorUpWithSelection<CR>
 nnoremap <C-l> :action Back<CR>
 nnoremap <C-h> :action Forward<CR>
 nnoremap <leader>c :action CallHierarchy<CR>
